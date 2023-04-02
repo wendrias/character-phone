@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Phone</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="../js/script.js"></script>
+</head>
+
+<body class="iphone-screen">
+    <div class="top-bar fixed">
+        <p class="small-time">10:00</p>
+        <img class="top-bar-icons" src="../images//top-bar-icons/icons-white-final.png" />
+    </div>
+    <img class="main" src="../images//phone/keypad.jpg" />
+    <div class="phone-links">
+        <div class="link-group">
+            <div class="phone-link" onclick="showPage('phone', 1)"></div>
+            <div class="phone-link" onclick="showPage('phone', 2)"></div>
+        </div>
+        <div class="phone-link" onclick="voicemailPage()"></div>
+    </div>
+
+
+    <img class="phone" src="../images//phone/phone1.jpg" />
+    <img class="phone" src="../images//phone/phone2.jpg" />
+    <img class="phone" src="../images//phone/phone3.jpg" />
+    <div onclick="voicemailShow()" class="sakura-voicemail-link"></div>
+    <div class="voicemail">
+        <img src="../images//phone/sakura-voicemail.jpg" />
+        <div class="play-voicemail play-off" onclick="playVoicemail()"></div>
+    </div>
+
+    <div class="phone-back" onclick="backPage('phone')"></div>
+
+    <audio id="voicemail-audio">
+        <source src="../audio/voicemail.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+
+    <a class="home-nav" href="./home.html"></a>
+</body>
+
+</html>

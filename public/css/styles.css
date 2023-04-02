@@ -1,0 +1,796 @@
+body {
+    background: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.iphone-screen-wrapper[data-page="home"] {
+    overflow: hidden
+}
+
+.lock-screen a {
+    color: white;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.iphone-screen-wrapper,
+.iphone-screen,
+.wallpaper {
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    width: calc(100vh * 195 / 422);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: auto;
+}
+
+img,
+p,
+h1,
+h2,
+div,
+a {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.wallpaper {
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/76612106-8aba-4097-9619-baee44cc3b5f/d88qv8t-43aea6b7-9442-428d-917f-6787fcfcd310.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzc2NjEyMTA2LThhYmEtNDA5Ny05NjE5LWJhZWU0NGNjM2I1ZlwvZDg4cXY4dC00M2FlYTZiNy05NDQyLTQyOGQtOTE3Zi02Nzg3ZmNmY2QzMTAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.8Kxh_yFewA_McknmCxuWjf0Tnu4aPFPXvf1Bz7g2cIw');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    width: calc(100vh * 195/422);
+    height: 2vh;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: 0;
+    padding-top: 1vh;
+    color: white;
+    line-height: 3vh;
+    font-size: 2vh;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.top-bar p {
+    margin: 0;
+    margin-left: 3.5vh;
+}
+
+.top-bar .black {
+    color: black !important;
+}
+
+.top-bar.fixed {
+    position: fixed !important;
+}
+
+.top-bar-icons {
+    height: 3vh;
+    margin-right: 3.5vh;
+}
+
+.lock-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(1, 1, 1, .2), rgba(1, 1, 1, .2), rgba(1, 1, 1, 0), rgba(1, 1, 1, 0), rgba(1, 1, 1, 0));
+    z-index: 1;
+}
+
+.time-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15vh;
+    z-index: 2;
+}
+
+.time {
+    font-size: 12vh;
+    margin: 0;
+}
+
+.date {
+    font-size: 3vh;
+    margin: 0;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 36vh;
+    position: absolute;
+    bottom: 8vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 45vh;
+    z-index: 2;
+}
+
+.camera,
+.flashlight {
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* set the background color with transparency */
+    backdrop-filter: blur(10px);
+    /* apply a blur effect to the background */
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* add a subtle drop shadow*/
+    height: 6vh;
+    width: 6vh;
+    line-height: 7.5vh;
+    text-align: center;
+}
+
+.flashlight {
+    /*   background-image: url('https://icons8.com/icon/59787/flash-light'); */
+}
+
+.camera {
+    /* 	background-image: url('https://www.pngkey.com/png/full/10-104955_camera-icon-white-small-camera-icon-white-png.png'); */
+}
+
+hr {
+    color: white;
+    background-color: white;
+    border: white;
+    width: 25vh;
+    border-radius: 100px;
+    z-index: 2;
+    position: absolute;
+    bottom: .5vh;
+    height: .5vh;
+    z-index: 2;
+}
+
+.passcode-screen {
+    display: flex;
+    background-color: #f2f2f2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2vh);
+}
+
+.passcode-screen p {
+    font-size: 2.5vh;
+    margin: 0 0 3vh;
+    font-weight: lighter;
+    color: #fff;
+}
+
+.passcode-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8vh;
+    width: 50%;
+}
+
+.passcode-input input[type="password"] {
+    appearance: none;
+    border: none;
+    border-radius: 50%;
+    width: 1vh;
+    height: 1vh;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: white solid .2vh;
+    box-shadow: 0 0 2vh rgba(0, 0, 0, 0.2);
+}
+
+.number-pad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2vh;
+}
+
+.number-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 10vh;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: none;
+    transition: background-color .3s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.number-button:hover {
+    background-color: rgba(255, 255, 255, .7);
+    transition: background-color .3s;
+}
+
+.number-button span {
+    font-size: 4.5vh;
+    color: #fff;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(.4)
+    }
+    25% {
+        transform: translateX(-10px)
+    }
+    50% {
+        transform: translateX(6px)
+    }
+    75% {
+        transform: translateX(-4px)
+    }
+    100% {
+        transform: translateX(0)
+    }
+}
+
+.home-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vh;
+    overflow: hidden;
+    max-height: 100vh;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2vh;
+    padding-top: 3vh;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.app img {
+    box-shadow: 0px 1vh 2vh rgba(0, 0, 0, 0.2);
+    width: 8vh;
+    height: 8vh;
+    border-radius: 20%;
+}
+
+.app.ig img {
+    border-radius: 30%;
+    background-color: white;
+}
+
+.app p {
+    font-size: 2vh;
+    color: white;
+}
+
+.bottom-row {
+    position: absolute;
+    bottom: 4vh;
+    width: calc(90vh * 195/422);
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, .4);
+    padding: 2vh;
+    border-radius: 7px;
+}
+
+.bottom-row .app {
+    width: 8vh;
+    height: 8vh;
+}
+
+.main {
+    height: 100vh;
+}
+
+.home-nav {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    height: 3vh;
+    width: calc(100vh* (195 / 422));
+    z-index: 3;
+    cursor: pointer;
+}
+
+.top {
+    position: fixed;
+    width: calc(100vh* (195 / 422));
+    top: 0;
+}
+
+.bottom {
+    position: fixed;
+    width: calc(100vh* (195 / 422));
+    bottom: 0;
+}
+
+.body {
+    position: absolute;
+    z-index: -1;
+    width: calc(100vh* (195 / 422));
+    padding-top: 12vh;
+    padding-bottom: 9vh;
+    overflow: scroll;
+}
+
+
+/* instagram */
+
+.sakura-story-link {
+    height: 13vh;
+    width: 10vh;
+    position: absolute;
+    top: 13vh;
+    left: 13vh;
+}
+
+.sakura-story {
+    display: none;
+    max-height: 1vh;
+    position: absolute;
+    top: 18vh;
+    left: 17vh;
+    transition: max-height 1s top 1s left 1s;
+}
+
+.sasuke-story-link {
+    height: 13vh;
+    width: 10vh;
+    position: absolute;
+    top: 13vh;
+    left: 24vh;
+}
+
+.sasuke-story {
+    display: none;
+    max-height: 1vh;
+    position: absolute;
+    top: 18vh;
+    left: 29vh;
+    transition: max-height 1s top 1s left 1s;
+}
+
+.story-show {
+    display: block;
+    top: 0;
+    left: 0;
+    max-height: 100vh;
+    transition: max-height 1s top 1s left 1s;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+/* maps */
+
+.maps-float {
+    position: relative;
+    height: 10vh;
+    left: 40vh;
+    top: 10vh;
+    z-index: 2;
+}
+
+.maps-body {
+    position: absolute;
+    z-index: -1;
+    height: 150vh;
+    padding-bottom: 10vh;
+    overflow: scroll;
+}
+
+.maps-body-container {
+    position: fixed;
+    height: 20vh;
+    width: calc(100vh * 195 / 422);
+}
+
+
+/* notes */
+
+.note-links {
+    width: 42vh;
+    height: 36vh;
+    position: absolute;
+    top: 23vh;
+    left: 2vh;
+}
+
+.note-link {
+    width: 100%;
+    height: 20%;
+    cursor: pointer;
+}
+
+.note {
+    display: none;
+    height: 100vh;
+    width: calc(100vh * 195 / 422);
+    position: absolute;
+    left: 0;
+}
+
+.note-back {
+    display: none;
+    height: 5vh;
+    width: 10vh;
+    position: absolute;
+    top: 5vh;
+    left: 1vh;
+    cursor: pointer;
+}
+
+.show {
+    display: inline !important;
+}
+
+
+/* settings */
+
+.settings-body {
+    padding-top: 17vh;
+    padding-bottom: 0;
+}
+
+hr.home-line {
+    width: 20vh;
+    height: 0.4vh;
+    color: white;
+    position: relative;
+}
+
+.fixed-screen-container {
+    position: fixed;
+    bottom: 0;
+    height: 2.5vh;
+    width: calc(100vh * 195 / 422);
+}
+
+
+/* phone */
+
+.phone-links {
+    /* background-color: red; */
+    height: 7vh;
+    width: 20vh;
+    position: absolute;
+    bottom: 3vh;
+    width: calc(100vh * 195 / 422);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 3;
+}
+
+.phone-link {
+    width: 20%;
+    cursor: pointer;
+}
+
+.link-group {
+    display: flex;
+    height: 100%;
+    width: 40%;
+}
+
+.link-group .phone-link {
+    height: 100%;
+    width: 50%;
+    margin: 0;
+}
+
+.phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: none;
+}
+
+.phone-back {
+    height: 7vh;
+    width: calc((100vh * 195 / 422)/5);
+    position: absolute;
+    bottom: 3vh;
+    left: calc(((100vh * 195 / 422)/5)*3);
+    cursor: pointer;
+    z-index: 3;
+    display: inline;
+}
+
+.voicemail img {
+    width: 100%;
+    height: 0;
+}
+
+.voicemail {
+    display: none;
+    position: absolute;
+    top: 24vh;
+    left: 0;
+    width: calc(100vh * 195 / 422);
+    height: 0;
+    z-index: 100
+}
+
+.sakura-voicemail-link {
+    display: none;
+    height: 6vh;
+    width: calc(100vh * 195 / 422);
+    position: absolute;
+    top: 18vh;
+    cursor: pointer;
+}
+
+.play-voicemail {
+    display: none;
+    height: 5vh;
+    width: 5vh;
+    position: absolute;
+    top: 8vh;
+    left: 3vh;
+    cursor: pointer;
+}
+
+audio {
+    height: 0;
+}
+
+
+/* camera */
+
+#camera-container {
+    height: 100vh;
+    overflow: hidden;
+    display: block;
+    width: calc(100vh * 195 / 422);
+    margin-left: 64vh;
+}
+
+#camera-container video {
+    margin-left: -100%;
+    height: 100vh;
+}
+
+
+/* photos */
+
+.recents-link {
+    display: block;
+    height: 25vh;
+    width: 20vh;
+    position: absolute;
+    top: 23vh;
+    left: 2.5vh;
+    cursor: pointer;
+}
+
+.dno-link {
+    display: block;
+    height: 25vh;
+    width: 20vh;
+    position: absolute;
+    top: 23vh;
+    left: 24vh;
+    cursor: pointer;
+}
+
+.sakura-link {
+    display: block;
+    height: 25vh;
+    width: 20vh;
+    position: absolute;
+    top: 50vh;
+    left: 24vh;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+.recents-photos.body {
+    padding-top: 16vh;
+}
+
+.back-button {
+    width: 15vh;
+    height: 4vh;
+    position: fixed;
+    top: 6vh;
+    z-index: 2;
+    cursor: pointer;
+}
+
+
+/* safari */
+
+.switch-trigger {
+    width: 10vh;
+    height: 5vh;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    /* left: 100vh; */
+    bottom: 5vh;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.switch-main,
+.switch-priv {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: none;
+}
+
+.priv-link {
+    width: 42vh;
+    height: 5vh;
+    position: absolute;
+    top: 59vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+}
+
+.main-link {
+    width: 42vh;
+    height: 5vh;
+    position: absolute;
+    top: 54vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+}
+
+.priv-bottom {
+    display: none;
+}
+
+.priv-body {
+    display: none;
+    margin-top: 0.5vh;
+}
+
+.main-body {
+    display: block;
+}
+
+
+/* messages */
+
+.sakura-message {
+    display: none;
+}
+
+.msg-back {
+    width: 5vh;
+    height: 5vh;
+    position: absolute;
+    /* background: red; */
+    top: 6vh;
+    left: 1vh;
+    display: none;
+    cursor: pointer;
+}
+
+.sakura-message-link {
+    width: calc(100vh * 195 / 422);
+    height: 9vh;
+    position: absolute;
+    z-index: 3;
+    top: 12vh;
+    cursor: pointer;
+}
+
+.sakura-message-body {
+    min-height: 79vh;
+}
+
+.sakura-message-body::-webkit-scrollbar {
+    display: none;
+}
+
+.message-input {
+    border: none;
+}
+
+.message-input {
+    height: 7vh;
+    width: 23vh;
+    z-index: 4;
+    position: absolute;
+    top: 86.5vh;
+    left: 16vh;
+    background: none;
+    border: none;
+    resize: none;
+    color: white;
+}
+
+.message-input:focus {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.send-msg {
+    width: 4vh;
+    height: 4vh;
+    background: red;
+    position: absolute;
+    bottom: 5vh;
+    right: 2vh;
+    display: none;
+}
